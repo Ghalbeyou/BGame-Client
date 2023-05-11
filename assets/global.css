@@ -1,0 +1,85 @@
+@import url(./bootstrap/bootstrap.css);
+
+/* Use a more specific selector to avoid unintended effects on other elements */
+html, body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* CSS for the loading screen */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.loading-screen__spinner {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid #ccc;
+  border-top-color: #000;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hide the loading screen once content is loaded */
+body.loaded .loading-screen {
+  display: none;
+}
+
+/* Custom window buttons */
+
+.window-buttons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  -webkit-app-region: drag;
+}
+
+.window-button {
+  margin-left: 5px;
+  padding: 2px 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+
+.window-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.window-button:active {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+/* Use a more specific selector to avoid unintended effects on other elements */
+.window-buttons .window-button.close {
+  color: gray;
+  margin-left: auto;
+}
+.download{
+  float: right;
+}
+
